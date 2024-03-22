@@ -20,7 +20,7 @@ public class Userservice {
 	public void init() {
 		this.users.add(User.builder().username("Evan").password("abc123").email("abc@gmail.com").age(35).build()
 				);
-		this.users.add(User.builder().username("Franni").password("Geburtstag0920").email("Franni@gmail.com").age(35).build()
+		this.users.add(User.builder().username("Franni").password("Geburtstag0920").email("Franni@gmail.com").age(17).build()
 				);
 		this.users.add(User.builder().username("Ryland").password("cool").email("ry@gmail.com").age(30).build()
 				);
@@ -40,7 +40,7 @@ public class Userservice {
 	}
 	
 	// addUser
-	public List<User> addUser(User user) {
+	public List<User> createUser(User user) {
 		this.users.add(user);
 		return users;
 	}
@@ -52,4 +52,13 @@ public class Userservice {
 								.collect(Collectors.toList());
 		return result;
 	}
+	
+	// searchUser
+	public List<User> searchUser(String username) {
+		List<User> result = users.stream()
+								.filter(users -> users.getUsername().contains(username))
+								.collect(Collectors.toList());
+		return result;
+	}
+	
 }

@@ -41,7 +41,7 @@ class SpringWebApplicationTests {
 						.age(20)
 						.build();
 		
-		userService.addUser(user);
+		userService.createUser(user);
 		
 		System.out.println(userService.getAllUser());
 		System.out.println(userService.getAllUser().size());
@@ -54,4 +54,12 @@ class SpringWebApplicationTests {
 		System.out.println(users);
 		System.out.println(users.size());
 	}
+	
+	// search II
+	@Test
+	void contextLoads5() {
+		List<User> users = userService.searchUser("E");
+		System.out.println(users);
+	}
+	
 }
