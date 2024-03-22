@@ -1,4 +1,5 @@
-package com.example.demo.Userservice;
+
+package com.example.demo.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +7,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.entity.User;
+import com.example.demo.Entity.User;
 
 import jakarta.annotation.PostConstruct;
 

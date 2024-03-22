@@ -1,3 +1,4 @@
+
 package com.example.demo.Controller;
 
 import java.util.List;
@@ -8,17 +9,18 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Userservice.Userservice;
-import com.example.demo.entity.User;
+import com.example.demo.Service.Userservice;
+import com.example.demo.Entity.User;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 
 @RestController
 @RequestMapping("/api/v1")
-public class Controller {
+public class Usercontroller {
 
 	@Autowired
 	Userservice userService;
@@ -37,14 +39,14 @@ public class Controller {
 		userService.createUser(user);
 	}
 	
-	@DeleteMapping("/users/{username}")
-	public ResponseEntity<List<User>> deleteUser(@PathVariable("username") String username){
+	@DeleteMapping("/users/{usernameDelete}")
+	public ResponseEntity<List<User>> deleteUser(@PathVariable("usernameDelete") String username){
 		ResponseEntity.ok(userService.deleteUser(username));
 		return ResponseEntity.noContent().build();
 	}
 	
-	@GetMapping("/users/{}")
-	public ResponseEntity<List<User>> searchUser(@PathVariable String username){
+	@GetMapping("/users/{usernameSearch}")
+	public ResponseEntity<List<User>> searchUser(@PathVariable("usernameSearch") String username){
 		return ResponseEntity.ok(userService.searchUser(username));
 	}
 	
