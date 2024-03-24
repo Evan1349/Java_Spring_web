@@ -45,7 +45,7 @@ public class Usercontroller {
 		return ResponseEntity.noContent().build();
 	}
 	
-	@GetMapping("/users/{usernameSearch}")
+	@GetMapping("/users/{usernameSearch}/Search")
 	public ResponseEntity<List<User>> searchUser(@PathVariable("usernameSearch") String username){
 		return ResponseEntity.ok(userService.searchUser(username));
 	}
