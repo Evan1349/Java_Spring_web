@@ -34,10 +34,11 @@ public class Userservice {
 	
 	// getUser method:stream().filter().collect()
 	public User getUser(String username) {
-		List <User> result = users	.stream()
-									.filter(user -> user.getUsername().equals(username))
-									.collect(Collectors.toList());
-		return result.get(0) ;
+		List <User> result = null; 
+		result=users.stream()
+				.filter(user -> user.getUsername().equals(username))
+				.collect(Collectors.toList());
+		return (result.size()==0)?null:result.get(0) ;
 	}
 	
 	// addUser
@@ -48,7 +49,7 @@ public class Userservice {
 	
 	// deleteUser
 	public List<User> deleteUser(String username) {
-		List<User> result= users.stream()
+		List<User> result = users.stream()
 								.filter(users -> !users.getUsername().equals(username))
 								.collect(Collectors.toList());
 		return result;
@@ -59,7 +60,7 @@ public class Userservice {
 		List<User> result = users.stream()
 								.filter(users -> users.getUsername().contains(username))
 								.collect(Collectors.toList());
-		return result;
+		return (result.size()==0)?null:result;
 	}
 	
 }
