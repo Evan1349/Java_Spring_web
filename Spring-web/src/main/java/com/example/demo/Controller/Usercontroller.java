@@ -62,9 +62,13 @@ public class Usercontroller {
 		return ResponseEntity.noContent().build();
 	}
 	
+<<<<<<< HEAD
 	// search
 	@Operation( summary= "Search a user", description= "Using a letter to search user's detail ")
 	@GetMapping("/users/{usernameSearch}/search")
+=======
+	@GetMapping("/users/{usernameSearch}/Search")
+>>>>>>> 5a3dd1e7982e7d05f97d97d847805497f2c21a33
 	public ResponseEntity<List<User>> searchUser(@PathVariable("usernameSearch") String username){
 		List<User> user= userService.searchUser(username);
 		if (user==null)
