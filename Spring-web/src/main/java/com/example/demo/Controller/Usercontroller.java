@@ -61,8 +61,7 @@ public class Usercontroller {
 		ResponseEntity.ok(userService.deleteUser(username));
 		return ResponseEntity.noContent().build();
 	}
-	
-<<<<<<< HEAD
+
 	// search
 	@Operation( summary= "Search a user", description= "Using a letter to search user's detail ")
 	@GetMapping("/users/{usernameSearch}/search")
